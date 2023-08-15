@@ -91,3 +91,5 @@ $ yarn add reactjs-star-rating
 ```
 
 ### MIT License
+
+Made with ❤ by [Varshil Shah](https://www.linkedin.com/in/shahvarshil/) from 🇮🇳
