@@ -1,0 +1,76 @@
+{
+  "name": "reactjs-star-rating",
+  "private": false,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "",
+  "license": "MIT",
+  "author": "Varshil Shah <varshilshah.in@gmail.com>",
+  "keywords": [
+    "react",
+    "star",
+    "rating",
+    "star-rating"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varshil-shah/reactjs-star-rating.git"
+  },
+  "homepage": "https://github.com/varshil-shah/reactjs-star-rating.git/#readme",
+  "bugs": {
+    "url": "https://github.com/varshil-shah/reactjs-star-rating.git/issues"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "./dist/reactjs-star-rating.umd.js",
+  "module": "./dist/reactjs-star-rating.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/reactjs-star-rating.es.js",
+      "require": "./dist/reactjs-star-rating.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es2020": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.4",
+    "vite": "^4.4.9"
+  }
+}
