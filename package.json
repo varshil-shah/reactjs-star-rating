@@ -1,16 +1,18 @@
 {
   "name": "reactjs-star-rating",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
-  "description": "",
+  "description": "This is a simple star rating component for ReactJS.",
   "license": "MIT",
   "author": "Varshil Shah <varshilshah.in@gmail.com>",
   "keywords": [
     "react",
     "star",
     "rating",
-    "star-rating"
+    "star-rating",
+    "star rating",
+    "reactjs star rating"
   ],
   "repository": {
     "type": "git",

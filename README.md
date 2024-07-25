@@ -1,6 +1,6 @@
 # React Star Rating Component
 
-ReactJS Star Rating is a flexible and dynamic star rating component with plenty of features. It is easy to use and customize, making it perfect for any project.
+ReactJS Star Rating is a flexible and dynamic star rating component with plenty of features. It is easy to use and customize, making it perfect for any project. It has features like custom labels, read-only mode, callback function, and custom styling.
 
 ## Demo
 
@@ -89,6 +89,8 @@ $ yarn add reactjs-star-rating
   className="custom-star-rating"
 />
 ```
+
+Feel free to play around with the parameters and customize the star rating component as per your needs.
 
 ### MIT License
 
