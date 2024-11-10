@@ -4,7 +4,7 @@ ReactJS Star Rating is a flexible and customizable star rating component that su
 
 ## Demo
 
-![GIF](https://res.cloudinary.com/dye2xzijo/image/upload/v1731218148/djdoxrlnahq26nyocwoe.gif)
+![GIF](https://res.cloudinary.com/dye2xzijo/image/upload/v1731218721/rxrbnuoctoyfuwspsxun.gif)
 
 ## Installation
 
