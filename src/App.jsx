@@ -29,6 +29,15 @@ function App() {
           showLabel={false}
         />
       </div>
+      <div>
+        <h2>With half stars</h2>
+        <StarRating
+          allowHalf
+          defaultRating={2.5}
+          maxRating={5}
+          color="purple"
+        />
+      </div>
     </div>
   );
 }

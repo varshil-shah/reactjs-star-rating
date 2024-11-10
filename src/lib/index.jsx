@@ -1,6 +1,7 @@
+import { useRating } from "./hooks/useRating";
+import { Star } from "./components/Star";
 import PropTypes from "prop-types";
-import { useState } from "react";
-import { Star } from "./Star";
+import "./styles.css";
 
 export default function StarRating({
   maxRating = 5,
@@ -12,55 +13,42 @@ export default function StarRating({
   showLabel = true,
   labels = [],
   onSetRating,
+  allowHalf = false,
 }) {
-  const [rating, setRating] = useState(
-    defaultRating > maxRating ? maxRating : defaultRating
-  );
-  const [tempRating, setTempRating] = useState(0);
-
-  function handleRating(rating) {
-    if (readOnly) return;
-
-    setRating(rating);
-    onSetRating?.(rating);
-  }
-
-  function handleTempRatingUpdate(tempRating) {
-    if (readOnly) return;
-
-    setTempRating(tempRating);
-  }
+  const {
+    rating,
+    tempRating,
+    handleRating,
+    handleTempRating,
+    clearTempRating,
+  } = useRating({
+    defaultRating,
+    maxRating,
+    onSetRating,
+    readOnly,
+    allowHalf,
+  });
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "16px",
-      }}
-      className={className}
-    >
-      <div style={{ display: "flex" }}>
+    <div className={`star-rating-wrapper ${className}`}>
+      <div className="stars-container">
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
             key={i}
             full={tempRating ? tempRating >= i + 1 : rating >= i + 1}
+            half={tempRating ? tempRating === i + 0.5 : rating === i + 0.5}
             color={color}
             size={size}
-            onRate={() => handleRating(i + 1)}
-            onHoverIn={() => handleTempRatingUpdate(i + 1)}
-            onHoverOut={() => handleTempRatingUpdate(0)}
+            onRate={(e) => handleRating(e, i + 1)}
+            onHoverIn={(e) => handleTempRating(e, i + 1)}
+            onHoverOut={clearTempRating}
           />
         ))}
       </div>
       {showLabel && (
         <p
-          style={{
-            lineHeight: "1",
-            margin: "0",
-            color,
-            fontSize: `${size / 1.5}px`,
-          }}
+          className="rating-label"
+          style={{ color, fontSize: `${size / 1.5}px` }}
         >
           {labels.length === maxRating
             ? labels[tempRating ? tempRating - 1 : rating - 1]
@@ -71,15 +59,15 @@ export default function StarRating({
   );
 }
 
-// Declaring the prop types
 StarRating.propTypes = {
-  maxRating: PropTypes.string,
+  maxRating: PropTypes.number,
   color: PropTypes.string,
   size: PropTypes.number,
   className: PropTypes.string,
   defaultRating: PropTypes.number,
-  labels: PropTypes.array,
-  onSetRating: PropTypes.func,
   readOnly: PropTypes.bool,
   showLabel: PropTypes.bool,
+  labels: PropTypes.arrayOf(PropTypes.string),
+  onSetRating: PropTypes.func,
+  allowHalf: PropTypes.bool,
 };
